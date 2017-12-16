@@ -1,0 +1,40 @@
+.Sidebar {
+  /* https://uigradients.com/#Bighead */
+  background: #c94b4b;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+  order: -1;
+  padding: 10px;
+}
+
+.Sidebar a {
+  color: white;
+  display: block;
+  padding: 4px 4px;
+  text-decoration: none;
+}
+
+.Sidebar a.active {
+  text-shadow: 0 0 5px white;
+}
+
+.Sidebar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.Sidebar div {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5px;
+  padding: 4px 4px;
+}
+
+.Sidebar li {
+  list-style: none;
+}
+
+.Sidebar ul {
+  padding-left: 20px;
+  margin: 0;
+}
