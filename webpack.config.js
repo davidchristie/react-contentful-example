@@ -1,10 +1,24 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
+const copy = new CopyWebpackPlugin([
+  {
+    from: 'assets',
+    ignore: [
+      'index.html'
+    ]
+  }
+])
+
 const extractText = new ExtractTextPlugin({
   disable: process.env.NODE_ENV === 'development',
   filename: '[name].[contenthash].css'
+})
+
+const html = new HtmlWebpackPlugin({
+  template: path.resolve('assets', 'index.html')
 })
 
 module.exports = {
@@ -37,9 +51,8 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve('assets', 'index.html')
-    }),
-    extractText
+    html,
+    extractText,
+    copy
   ]
 }
